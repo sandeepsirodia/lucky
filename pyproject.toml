@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "passrate"
+version = "0.1.0"
+description = "lucky: hyperfine, but for pass rates. Is it better, or did you get lucky?"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sandeep Sirodia" }]
+requires-python = ">=3.9"
+keywords = ["statistics", "flaky-tests", "evals", "llm", "benchmark", "ab-testing", "cli"]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Software Development :: Testing", "Environment :: Console"]
+
+[project.urls]
+Homepage = "https://github.com/sandeepsirodia/lucky"
+
+[project.scripts]
+lucky = "lucky:main"
+
+[tool.setuptools]
+py-modules = ["lucky"]
