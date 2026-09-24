@@ -98,6 +98,14 @@ It's one file. Read it in a sitting.
 - It assumes runs are independent. If your command caches results between runs, lucky can't know.
 - `--until-decided` uses a simple, conservative stopping rule (Bonferroni across looks). It's safe, but it stops later than fancier designs would.
 
+## Prior art, and what's new here
+
+- **[hyperfine](https://github.com/sharkdp/hyperfine)** is the inspiration for the interface. It measures time; lucky measures pass rates.
+- **Flaky-test rerunners** ([pytest-flakefinder](https://github.com/dropbox/pytest-flakefinder), [flaky](https://github.com/box/flaky), `go test -count`) rerun tests inside one framework. Use them if you live in that framework.
+- **Eval statistics libraries** ([evalstats](https://github.com/clavis-systems/evalstats), [evalci](https://arxiv.org/abs/2607.04429)) are Python libraries you call on results tables, and they're more complete statistically.
+
+lucky's niche is narrow on purpose: **any command, from the shell, with a verdict**, plus early stopping that doesn't cheat.
+
 <details>
 <summary><b>Development</b></summary>
 
