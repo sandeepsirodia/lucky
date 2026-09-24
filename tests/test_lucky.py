@@ -72,6 +72,13 @@ class TestStats(unittest.TestCase):
         self.assertLessEqual(abs(lucky.sample_size(p1, p2) - ref) / ref, 0.10)
         self.assertIsNone(lucky.sample_size(0.5, 0.5))
 
+    def test_e9a_sample_size_matches_published_values(self):
+        # Independent of our formula: the widely cited two-proportion example p1=0.5 vs p2=0.7 (alpha .05,
+        # power .8) needs n=93 per group without continuity correction and n=103 with Fleiss' correction
+        # (Fleiss, Levin & Paik). Our function is the corrected one.
+        self.assertEqual(lucky.sample_size(0.5, 0.7), 103)
+        self.assertEqual(lucky.sample_size(0.7, 0.5), 103)   # symmetric
+
     def test_e9b_sample_size_is_honest(self):
         # Simulate: at the suggested n, a real 0.85 vs 0.60 gap should be detected ~80% of the time.
         rng, n = random.Random(3), lucky.sample_size(0.85, 0.60)
