@@ -72,6 +72,8 @@ Runs are **interleaved** (A, B, A, B…), so if your API gets slower at 3pm, bot
 
 ## Peeking is cheating, and here's the number
 
+<p align="center"><img src="assets/peeking.svg" alt="False wins between identical commands: check once 3.8%, check at 5 points 9.4%, check every run 16%, lucky --until-decided 1.75%" width="760"></p>
+
 The tempting move: run a few, check, run a few more, check again, stop when it looks significant. That inflates false wins. I simulated two *identical* coins, checking for a "significant" difference:
 
 | Strategy | False "B is better" rate |
