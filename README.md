@@ -26,8 +26,10 @@ Pass rates lie at small n, and we all read them anyway: prompt tweaks, model swa
 
 ## Use it
 
+The package is called `passrate` (the name `lucky` was taken on PyPI); the command is `lucky`. Install it with `uv tool install passrate` or `pipx install passrate`, or run it once:
+
 ```bash
-uvx --from git+https://github.com/sandeepsirodia/lucky lucky -n 20 './eval.sh --model a' './eval.sh --model b'
+uvx --from passrate lucky -n 20 './eval.sh --model a' './eval.sh --model b'
 ```
 
 ```console
